@@ -4,15 +4,41 @@
 using namespace std;
 
 int myModulo(int mod, int number){
-	number = abs(number);
-	mod = abs(mod);
-	while(true){
-		if(number >= mod){
-			number-=mod;
-		}if(number < mod){
-			return number;
+	if(mod >=0 && number>=0){
+		while(true){
+			if(number >= mod){
+				number-=mod;
+			}if(number < mod){
+				return number;
+			}
+		}
+	}else if(mod < 0 && number < 0){
+		while(true){
+			if(number <= mod){
+				number-=mod;
+			}if(number > mod){
+				return number;
+			}
+		}
+	}else if (number < 0 && mod > 0){
+		while(true){
+			if(number <= mod){
+				number+=mod;
+			}if(number < mod && number > 0){
+				return number;
+			}
 		}
 	}
+	else if (number > 0 && mod < 0){
+		while(true){
+			if(number >= mod){
+				number+=mod;
+			}if(number > mod && number < 0){
+				return number;
+			}
+		}
+	}
+
 	return number;
 }
 
