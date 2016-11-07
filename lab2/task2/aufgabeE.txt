@@ -1,0 +1,3 @@
+openssl rsa -in keyfile.pem -outform der -out keyfile.der
+openssl rsa -in keyfile.pem -pubout -out keyfile_pub.pem
+openssl genrsa -aes256 -out keyfile.pem
