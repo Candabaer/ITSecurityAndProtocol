@@ -32,11 +32,11 @@ unsigned int publicKeyCarl = 199285757;
 
 
 unsigned int tmp = log(publicKeyCarl)/log(generator);
-unsigned int privateKeyDave = fmod(tmp,prime);
+unsigned int privateKeyAlice = fmod(tmp,prime);
 
-cout << "Private Key Dave " << privateKeyDave << endl;
+cout << "Private Key Alice " << privateKeyAlice << endl;
 
-tmp = (int)(pow(privateKeyDave,generator)+0,5);
+tmp = (int)(pow(privateKeyAlice,generator)+0,5);
 cout << "tmp: " << tmp <<endl;
 unsigned int result = tmp % prime;
 cout <<"result: "<< result<< endl;
