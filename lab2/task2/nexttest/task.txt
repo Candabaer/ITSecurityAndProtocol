@@ -1,0 +1,5 @@
+openssl dgst -sha512 -verify keyfile_public.pem -signature signature.sign keyfile.der
+openssl dgst -sha512 -sign keyfile.pem -out signature.sign keyfile.der
+openssl rsa -in keyfile.pem -outform der -out keyfile.der
+openssl rsa -inform pem -in keyfile.pem -noout -text
+openssl rsa -inform pem -in keyfile_public.pem -noout -text

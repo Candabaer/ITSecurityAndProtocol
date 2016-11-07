@@ -23,6 +23,7 @@ bool checkCorrectness(unsigned int   publicKey[], unsigned int  privateKey[], un
 	K[0] = tmp % prime;
 	tmp = pow(publicKey[0], privateKey[1]);
 	K[1] = tmp % prime;
+	cout << "Gemeinsame Secret: " << K[0]<< endl;
 	if(K[0]==K[1])
 		return true;	
 	else
